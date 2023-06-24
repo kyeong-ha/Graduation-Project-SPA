@@ -13,7 +13,11 @@
     },
     "categories": {
       "auth": {
-        "mymbtiab82121f": {}
+        "mymbtiab82121f": {},
+        "mymbtie2a86f12": {}
+      },
+      "api": {
+        "mymbti": {}
       }
     }
   }
