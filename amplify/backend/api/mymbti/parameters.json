@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "mymbti",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authmymbtiab82121f",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

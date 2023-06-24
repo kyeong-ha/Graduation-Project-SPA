@@ -1,0 +1,15 @@
+type Answer @model {
+    num: String!
+    context: String!
+}
+
+type Question @model {
+    num: String!
+    subject: String!
+}
+
+type MBTI @model {
+    mbti: String!
+    type: String!
+    mind: String!
+}

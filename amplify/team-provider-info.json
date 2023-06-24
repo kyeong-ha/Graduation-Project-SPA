@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-mymbti-dev-230743-authRole",
+      "UnauthRoleArn": "arn:aws:iam::709182149749:role/amplify-mymbti-dev-230743-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::709182149749:role/amplify-mymbti-dev-230743-authRole",
+      "Region": "ap-northeast-2",
+      "DeploymentBucketName": "amplify-mymbti-dev-230743-deployment",
+      "UnauthRoleName": "amplify-mymbti-dev-230743-unauthRole",
+      "StackName": "amplify-mymbti-dev-230743",
+      "StackId": "arn:aws:cloudformation:ap-northeast-2:709182149749:stack/amplify-mymbti-dev-230743/7dbc85a0-1298-11ee-8e9b-0a8b03d974b0",
+      "AmplifyAppId": "dt6j3a4baf4a9"
+    },
+    "categories": {
+      "auth": {
+        "mymbtiab82121f": {}
+      }
+    }
+  }
+}
