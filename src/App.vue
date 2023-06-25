@@ -1,7 +1,7 @@
 <!-- <template>
   <div id="app">
     <h1>MBTI App</h1>
-    <input type="text" v-model="num" placeholder="answer numㅊㅇ" />
+    <input type="text" v-model="num" placeholder="answer num" />
     <input type="text" v-model="context" placeholder="answer context" />
     <button v-on:click="createAnswer">Create Answer</button>
 
