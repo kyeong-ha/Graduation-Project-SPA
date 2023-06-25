@@ -1,11 +1,7 @@
-type Answer @model {
-    num: String!
-    context: String!
-}
-
-type Question @model {
-    num: String!
-    subject: String!
+type Input @model {
+    id: ID!
+    question: [String!]
+    answer: [String!]
 }
 
 type MBTI @model {
