@@ -10,7 +10,7 @@ export default defineConfig({
   resolve: {
     alias: {
       find: './runtimeConfig', // Vite Config
-      replacement: './runtimeConfig.browser' // Vite Config
+      replacement: './runtimeConfig.browser', // Vite Config
       
       // '@': fileURLToPath(new URL('./src', import.meta.url))
     }

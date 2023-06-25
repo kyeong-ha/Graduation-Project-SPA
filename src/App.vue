@@ -1,14 +1,14 @@
-<!-- <template>
+<template>
   <div id="app">
     <h1>MBTI App</h1>
-    <input type="text" v-model="num" placeholder="answer num" />
-    <input type="text" v-model="context" placeholder="answer context" />
-    <button v-on:click="createAnswer">Create Answer</button>
+    <input type="text" v-model="id" placeholder="answer num" />
+    <input type="text" v-model="answer" placeholder="answer context" />
+    <button v-on:click="createInput">Create Answer</button>
 
 
     <div v-for="item in questions" :key="item.id">
-      <h3>{{ item.num }}</h3>
-      <p>{{ item.subject }}</p>
+      <h3>{{ item.id }}</h3>
+      <p>{{ item.question }}</p>
     </div>
 
   </div>
@@ -16,40 +16,40 @@
 
 <script>
   import { API } from 'aws-amplify';
-  import { createAnswer } from './graphql/mutations'; // write the GraphQL data
-  import { questionList } from './graphql/queries'; // read the GraphQL data
+  import { createInput } from './graphql/mutations'; // write the GraphQL data
+  import { listInputs } from './graphql/queries'; // read the GraphQL data
   
   export default {
     name: 'app',
     data() {
       return {
-        num: '',
-        context: ''
+        id: 1,
+        question: 'question',
+        answer: ''
       };
     },
     methods: {
-      async createAnswer() {
-        const { num, context } = this;
-        if (!num || !context) return;
-        const answer = { num, context };
+      async createInput() {
+        const { id, question, answer } = this;
+        if (!id || !question || !answer) return;
+        // const result = { id, question, answer };
         await API.graphql({
-          query: createAnswer,
-          variables: { input: answer }
+          query: createInput,
+          variables: { input: this }
         });
-        this.num = '';
-        this.context = '';
+        this.id++;
       },
       async getQuestion() {
         const questions = await API.graphql({
-          query: questionList
+          query: listInputs
         });
-        this.questions = questions.data.questionList.items;
+        this.questions = questions.data.listInputs.items;
       }
     }
   }
-</script> -->
+</script>
 
-<script setup>
+<!-- <script setup>
   import { Authenticator } from '@aws-amplify/ui-vue';
   import '@aws-amplify/ui-vue/styles.css';
 </script>
@@ -60,4 +60,4 @@
       <button @click="signOut">Sign Out</button>
     </template>
   </authenticator>
-</template>
+</template> -->
