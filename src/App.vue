@@ -1,15 +1,15 @@
 <template>
   <div id="app">
     <h1>MBTI App</h1>
-    <input type="text" v-model="id" placeholder="answer num" />
-    <input type="text" v-model="answer" placeholder="answer context" />
-    <button v-on:click="createInput">Create Answer</button>
-
-
-    <div v-for="item in questions" :key="item.id">
+    <!-- <input type="text" v-model="id" placeholder="answer num" /> -->
+    
+    <div v-for="item in test" :key="item.id">
       <h3>{{ item.id }}</h3>
       <p>{{ item.question }}</p>
     </div>
+    <input type="text" v-model="answer" placeholder="answer context" />
+    <button v-on:click="createInput">Create Answer</button>
+
 
   </div>
 </template>
@@ -24,26 +24,27 @@
     data() {
       return {
         id: 1,
-        question: 'question',
-        answer: ''
+        question: [],
+        answer: [],
+        test: []
       };
     },
     methods: {
       async createInput() {
         const { id, question, answer } = this;
         if (!id || !question || !answer) return;
-        // const result = { id, question, answer };
+        const result = { id, question, answer };
         await API.graphql({
           query: createInput,
-          variables: { input: this }
+          variables: { input: result }
         });
         this.id++;
       },
       async getQuestion() {
-        const questions = await API.graphql({
+        const test = await API.graphql({
           query: listInputs
         });
-        this.questions = questions.data.listInputs.items;
+        this.test = test.data.listInputs.items;
       }
     }
   }
