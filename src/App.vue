@@ -4,7 +4,6 @@
     <!-- <input type="text" v-model="id" placeholder="answer num" /> -->
     
     <div v-for="item in test" :key="item.id">
-      <h3>{{ item.id }}</h3>
       <p>{{ item.question }}</p>
     </div>
     <input type="text" v-model="answer" placeholder="answer context" />
@@ -23,7 +22,6 @@
     name: 'app',
     data() {
       return {
-        id: 1,
         question: [],
         answer: [],
         test: []
@@ -31,19 +29,24 @@
     },
     methods: {
       async createInput() {
-        const { id, question, answer } = this;
-        if (!id || !question || !answer) return;
-        const result = { id, question, answer };
-        await API.graphql({
-          query: createInput,
-          variables: { input: result }
-        });
-        this.id++;
+        const { question, answer } = this;
+        if (!question || !answer) return;
+        try{
+          await API.graphql({
+            query: createInput,
+            variables: { input: { question: this.question, answer: this.answer } }
+          });
+          this.id++;
+          console.log('New contact created!');
+        } catch (err) {
+          console.log({ err });
+        }
       },
       async getQuestion() {
         const test = await API.graphql({
           query: listInputs
         });
+        console.log(this.test);
         this.test = test.data.listInputs.items;
       }
     }
