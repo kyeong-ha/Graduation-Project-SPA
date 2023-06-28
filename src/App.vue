@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>MBTI App</h1>
+    <h1>TEST App</h1>
     <!-- <input type="text" v-model="id" placeholder="answer num" /> -->
     
     <div v-for="item in test" :key="item.id">

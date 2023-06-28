@@ -50,5 +50,41 @@
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
     }
+  },
+  "function": {
+    "myLamda": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_myLamda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "myLamda"
+        }
+      ]
+    },
+    "AMPLIFY_function_myLamda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "myLamda"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "InputTable": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "MBTITable": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
   }
 }

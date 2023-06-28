@@ -18,6 +18,16 @@
       },
       "api": {
         "mymbti": {}
+      },
+      "storage": {
+        "InputTable": {},
+        "MBTITable": {}
+      },
+      "function": {
+        "myLamda": {
+          "deploymentBucketName": "amplify-mymbti-dev-230743-deployment",
+          "s3Key": "amplify-builds/myLamda-794e6b74713339376459-build.zip"
+        }
       }
     }
   }
