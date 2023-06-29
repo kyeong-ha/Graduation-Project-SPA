@@ -26,14 +26,17 @@ Amplify Params - DO NOT EDIT */
 
 // import { AWS } from '@aws-sdk/client-dynamodb';
 // const docClient = new AWS.DynamoDB.DocumentClient();
-import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
-import { BatchGetCommand, DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
+
+const { DynamoDBClient } = require('@aws-sdk/client-dynamodb');
+const { BatchGetCommand, DynamoDBDocumentClient } = require('@aws-sdk/lib-dynamodb');
+// import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+// import { BatchGetCommand, DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
 
 const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client);
 
 
-export const main = async () => {
+exports.handler = async () => {
   const command = new BatchGetCommand({
     RequestItems: {
       InputTable: {
