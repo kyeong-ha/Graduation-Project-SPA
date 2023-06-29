@@ -25,27 +25,53 @@ Amplify Params - DO NOT EDIT */
 ///
 
 // import { AWS } from '@aws-sdk/client-dynamodb';
-const AWS = require("@aws-sdk/client-dynamodb");
-const docClient = new AWS.DynamoDB.DocumentClient();
+// const docClient = new AWS.DynamoDB.DocumentClient();
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import { BatchGetCommand, DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
 
-const params = {
-  TableName : 'InputTable',
-  /* Item properties will depend on your application concerns */
-  Key: {
-     id: '1'
-  }
+const client = new DynamoDBClient({});
+const docClient = DynamoDBDocumentClient.from(client);
+
+
+export const main = async () => {
+  const command = new BatchGetCommand({
+    RequestItems: {
+      InputTable: {
+        // Each entry in Keys is an object that specifies a primary key.
+        Keys: [
+          {
+            id: "1",
+          },
+        ],
+        // Only return the "Title" and "PageCount" attributes.
+        ProjectionExpression: "question, answer",
+      },
+    },
+  });
+
+  const response = await docClient.send(command);
+  console.log(response.Responses["InputTable"]);
+  return response;
 }
 
-exports.handler = async (event, context) => {
-  try {
-    const data = await docClient.get(params).promise()
-    // await docClient.put(params).promise();
-    const response = {
-        statusCode: 200,
-        body: JSON.stringify(data)
-    };
-    return response;
-  } catch (err) {
-    return { error: err }
-  }
-};
+// const params = {
+//   TableName : 'InputTable',
+//   /* Item properties will depend on your application concerns */
+//   Key: {
+//     id: '1'
+//   }
+// }
+
+// exports.handler = async (event, context) => {
+//   try {
+//     const data = await docClient.get(params).promise()
+//     // await docClient.put(params).promise();
+//     const response = {
+//         statusCode: 200,
+//         body: JSON.stringify(data)
+//     };
+//     return response;
+//   } catch (err) {
+//     return { error: err }
+//   }
+// };
