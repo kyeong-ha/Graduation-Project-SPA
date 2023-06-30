@@ -1,10 +1,32 @@
 {
   "api": {
     "mymbti": {
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "mymbtie2a86f12"
+        }
+      ],
       "output": {
         "authConfig": {
-          "additionalAuthenticationProviders": [],
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authmymbtie2a86f12"
+              }
+            },
+            {
+              "authenticationType": "AWS_LAMBDA",
+              "lambdaAuthorizerConfig": {
+                "lambdaFunction": "myLamda",
+                "ttlSeconds": "300"
+              }
+            }
+          ],
           "defaultAuthentication": {
             "authenticationType": "AWS_IAM"
           }

@@ -2,5 +2,11 @@
   "AppSyncApiName": "mymbti",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2023-06-30T12:44:20.051Z"
+  "AuthModeLastUpdated": "2023-06-30T13:02:27.928Z",
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authmymbtie2a86f12",
+      "Outputs.UserPoolId"
+    ]
+  }
 }
