@@ -26,7 +26,7 @@
       "function": {
         "myLamda": {
           "deploymentBucketName": "amplify-mymbti-dev-230743-deployment",
-          "s3Key": "amplify-builds/myLamda-566366627773706c682b-build.zip"
+          "s3Key": "amplify-builds/myLamda-564d517272616f796232-build.zip"
         }
       }
     }
