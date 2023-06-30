@@ -12,23 +12,12 @@
       ],
       "output": {
         "authConfig": {
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-              "userPoolConfig": {
-                "userPoolId": "authmymbtie2a86f12"
-              }
-            },
-            {
-              "authenticationType": "AWS_LAMBDA",
-              "lambdaAuthorizerConfig": {
-                "lambdaFunction": "myLamda",
-                "ttlSeconds": "300"
-              }
-            }
-          ],
+          "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
-            "authenticationType": "AWS_IAM"
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authmymbtie2a86f12"
+            }
           }
         }
       },
