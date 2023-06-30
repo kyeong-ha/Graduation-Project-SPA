@@ -9,7 +9,6 @@
     <input type="text" v-model="answer" placeholder="answer context" />
     <button v-on:click="createInput">Create Answer</button>
 
-
   </div>
 </template>
 
@@ -42,7 +41,7 @@
           console.log({ err });
         }
       },
-      async getQuestion() {
+      async listInputs() {
         const test = await API.graphql({
           query: listInputs
         });
