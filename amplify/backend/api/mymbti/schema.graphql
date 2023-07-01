@@ -2,10 +2,10 @@ type Input @model @auth(rules: [{ allow: owner }] {
   id: ID!
   question: String!
   answer: String!
-} 
+})
 
 type MBTI @model @auth(rules: [{ allow: owner }] {
   mbti: String!
   type: String!
   mind: String!
-}
+})
