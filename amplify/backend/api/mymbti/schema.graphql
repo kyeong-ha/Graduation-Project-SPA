@@ -1,11 +1,13 @@
-type Input @model {
-    id: ID!
-    question: [String!]
-    answer: [String!]
+type Input @model(mutations: {
+  create: "createInput"
+}) {
+  id: ID!
+  question: String!
+  answer: String!
 }
 
 type MBTI @model {
-    mbti: String!
-    type: String!
-    mind: String!
+  mbti: String!
+  type: String!
+  mind: String!
 }

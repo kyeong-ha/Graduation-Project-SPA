@@ -13,30 +13,6 @@ export const onCreateInput = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateInput = /* GraphQL */ `
-  subscription OnUpdateInput($filter: ModelSubscriptionInputFilterInput) {
-    onUpdateInput(filter: $filter) {
-      id
-      question
-      answer
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
-export const onDeleteInput = /* GraphQL */ `
-  subscription OnDeleteInput($filter: ModelSubscriptionInputFilterInput) {
-    onDeleteInput(filter: $filter) {
-      id
-      question
-      answer
-      createdAt
-      updatedAt
-      __typename
-    }
-  }
-`;
 export const onCreateMBTI = /* GraphQL */ `
   subscription OnCreateMBTI($filter: ModelSubscriptionMBTIFilterInput) {
     onCreateMBTI(filter: $filter) {
