@@ -4,19 +4,19 @@
     "apiName": "mymbti",
     "serviceName": "AppSync",
     "defaultAuthType": {
-      "mode": "API_KEY",
-      "expirationTime": 365,
-      "apiKeyExpirationDate": "2024-06-30T11:18:57.114Z",
-      "keyDescription": ""
+      "mode": "AWS_IAM"
     },
     "conflictResolution": {},
     "additionalAuthTypes": [
       {
-        "mode": "AMAZON_COGNITO_USER_POOLS",
-        "cognitoUserPoolId": "authmymbtie2a86f12"
+        "mode": "API_KEY",
+        "expirationTime": 365,
+        "apiKeyExpirationDate": "2024-06-30T13:04:14.258Z",
+        "keyDescription": ""
       },
       {
-        "mode": "AWS_IAM"
+        "mode": "AMAZON_COGNITO_USER_POOLS",
+        "cognitoUserPoolId": "authmymbtie2a86f12"
       },
       {
         "mode": "AWS_LAMBDA",
