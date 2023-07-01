@@ -12,6 +12,7 @@ export const createInput = /* GraphQL */ `
       answer
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
@@ -27,6 +28,7 @@ export const updateInput = /* GraphQL */ `
       answer
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
@@ -42,6 +44,7 @@ export const deleteInput = /* GraphQL */ `
       answer
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
@@ -58,6 +61,7 @@ export const createMBTI = /* GraphQL */ `
       id
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
@@ -74,6 +78,7 @@ export const updateMBTI = /* GraphQL */ `
       id
       createdAt
       updatedAt
+      owner
       __typename
     }
   }
@@ -90,6 +95,7 @@ export const deleteMBTI = /* GraphQL */ `
       id
       createdAt
       updatedAt
+      owner
       __typename
     }
   }

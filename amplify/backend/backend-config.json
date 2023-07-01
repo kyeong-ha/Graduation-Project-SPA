@@ -15,17 +15,14 @@
           "additionalAuthenticationProviders": [
             {
               "apiKeyConfig": {
-                "apiKeyExpirationDate": "2024-06-30T13:04:14.258Z",
+                "apiKeyExpirationDate": "2024-06-30T13:24:14.288Z",
                 "apiKeyExpirationDays": 365,
                 "description": ""
               },
               "authenticationType": "API_KEY"
             },
             {
-              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-              "userPoolConfig": {
-                "userPoolId": "authmymbtie2a86f12"
-              }
+              "authenticationType": "AWS_IAM"
             },
             {
               "authenticationType": "AWS_LAMBDA",
@@ -36,7 +33,10 @@
             }
           ],
           "defaultAuthentication": {
-            "authenticationType": "AWS_IAM"
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authmymbtie2a86f12"
+            }
           }
         }
       },
