@@ -1,22 +1,29 @@
 <template>
-  <div id="app">
-    <h1>TEST App</h1>
-    <!-- <input type="text" v-model="id" placeholder="answer num" /> -->
-    
-    <div v-for="item in test" :key="item.id">
-      <p>{{ item.question }}</p>
-    </div>
-    <input type="text" v-model="answer" placeholder="answer context" />
-    <button v-on:click="createInput">Create Answer</button>
+  <authenticator>
+    <div id="app">
+      <h1>TEST App</h1>
+      <!-- <input type="text" v-model="id" placeholder="answer num" /> -->
+      
+      <div v-for="item in test" :key="item.id">
+        <p>{{ item.question }}</p>
+      </div>
+      <input type="text" v-model="answer" placeholder="answer context" />
+      <button v-on:click="createInput">Create Answer</button>
 
-  </div>
+    </div>
+</authenticator>
 </template>
 
 <script>
-  import { API } from 'aws-amplify';
+
+  import { API, Amplify } from 'aws-amplify';
+  import { Authenticator } from "@aws-amplify/ui-vue";
+  import awsconfig from './aws-exports';
+
   import { createInput } from './graphql/mutations'; // write the GraphQL data
   import { listInputs } from './graphql/queries'; // read the GraphQL data
   
+  Amplify.configure(awsconfig);
   export default {
     name: 'app',
     data() {
