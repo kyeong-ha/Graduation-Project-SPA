@@ -33,7 +33,7 @@
         try{
           await API.graphql({
             query: createInput,
-            variables: { input: { question: this.question, answer: this.answer } }
+            variables: { input: { question: this.question, answer: this.answer }, authMode: "AMAZON_COGNITO_USER_POOLS"  }
           });
           this.id++;
           console.log('New contact created!');
