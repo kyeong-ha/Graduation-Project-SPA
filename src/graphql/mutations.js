@@ -16,6 +16,36 @@ export const createInput = /* GraphQL */ `
     }
   }
 `;
+export const updateInput = /* GraphQL */ `
+  mutation UpdateInput(
+    $input: UpdateInputInput!
+    $condition: ModelInputConditionInput
+  ) {
+    updateInput(input: $input, condition: $condition) {
+      id
+      question
+      answer
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deleteInput = /* GraphQL */ `
+  mutation DeleteInput(
+    $input: DeleteInputInput!
+    $condition: ModelInputConditionInput
+  ) {
+    deleteInput(input: $input, condition: $condition) {
+      id
+      question
+      answer
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
 export const createMBTI = /* GraphQL */ `
   mutation CreateMBTI(
     $input: CreateMBTIInput!

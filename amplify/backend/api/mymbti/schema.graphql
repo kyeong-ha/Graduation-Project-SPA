@@ -1,6 +1,4 @@
-type Input @model(mutations: {
-  create: "createInput"
-}) {
+type Input @model {
   id: ID!
   question: String!
   answer: String!
