@@ -9,7 +9,6 @@ export const getInput = /* GraphQL */ `
       answer
       createdAt
       updatedAt
-      owner
       __typename
     }
   }
@@ -27,7 +26,6 @@ export const listInputs = /* GraphQL */ `
         answer
         createdAt
         updatedAt
-        owner
         __typename
       }
       nextToken
@@ -44,7 +42,6 @@ export const getMBTI = /* GraphQL */ `
       id
       createdAt
       updatedAt
-      owner
       __typename
     }
   }
@@ -63,7 +60,6 @@ export const listMBTIS = /* GraphQL */ `
         id
         createdAt
         updatedAt
-        owner
         __typename
       }
       nextToken

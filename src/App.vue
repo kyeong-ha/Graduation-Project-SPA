@@ -16,13 +16,13 @@
 
 <script>
 
-  import { API, Amplify } from 'aws-amplify';
-  import awsconfig from './aws-exports';
+  import { API } from 'aws-amplify';
+  // import awsconfig from './aws-exports';
 
   import { createInput } from './graphql/mutations'; // write the GraphQL data
   import { listInputs } from './graphql/queries'; // read the GraphQL data
   
-  Amplify.configure(awsconfig);
+  // Amplify.configure(awsconfig);
   export default {
     name: 'app',
     data() {
@@ -39,7 +39,9 @@
         try{
           await API.graphql({
             query: createInput,
-            variables: { input: { question: this.question, answer: this.answer }  }
+            variables: { 
+              input: { question: this.question, answer: this.answer }  
+            }
           });
           this.id++;
           console.log('New contact created!');
