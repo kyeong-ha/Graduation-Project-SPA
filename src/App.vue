@@ -8,7 +8,7 @@
         <p>{{ item.question }}</p>
       </div>
       <input type="text" v-model="answer" placeholder="answer context" />
-      <button v-on:click="createInput">Create Answer</button>
+      <button v-on:click="createForm()">Create Answer</button>
 
     </div>
 <!-- </authenticator> -->
@@ -16,44 +16,43 @@
 
 <script>
 
-  import { API, Amplify } from 'aws-amplify';
+  import { API } from 'aws-amplify';
   import { createInput } from './graphql/mutations'; // write the GraphQL data
-  import { listInputs } from './graphql/queries'; // read the GraphQL data
+  // import { listInputs } from './graphql/queries'; // read the GraphQL data
   
-  Amplify.configure({
-      Auth: {
-        region: 'ap-northeast-2',
-        userPoolId: 'ap-northeast-2_Tz1KjcvPB',
-        userPoolWebClientId: '63iec76eaio6dfmaofqmbenc9m',
-      },
-    });
-
-  export default {
-    name: 'app',
-    data() {
-      return {
-        question: '',
-        answer: '',
-        // test: []
-      };
-    },
-    
-    methods: {
-      async createInput() {
-        try {
-          const newInput = await API.graphql({
-          query: createInput,
-          variables: { input: {
-            "question": "Lorem ipsum dolor sit amet",
-            "answer": this.answer
-            }
+    // Amplify.configure({
+    //   Auth: {
+    //     region: 'ap-northeast-2',
+    //     userPoolId: 'ap-northeast-2_Tz1KjcvPB',
+    //     userPoolWebClientId: '63iec76eaio6dfmaofqmbenc9m',
+    //   },
+    // });
+    export default {
+      data : function() {
+            return {
+                id: 1,
+                question: '',
+                answer: ''
+            };
+        },
+      methods: {
+        async createForm() {
+          try {
+              const newInput = await API.graphql({
+              query: createInput,
+              variables: { input: {
+                "question": "Lorem ipsum dolor sit amet",
+                "answer": this.answer
+                }
+              }
+            });
+            console.log('Create saved successfully!', newInput);
+          } catch (error) {
+              console.log('Error saving create', error);
           }
-        });
-        console.log('Create saved successfully!', newInput);
-        } catch (error) {
-          console.log('Error saving create', error);
         }
-      },
+      }
+    }
       // async createInput() {
       //   const { id, question, answer } = this;
       //   if ( !id || !question || !answer) return;
@@ -70,15 +69,14 @@
       //     console.log({ err });
       //   }
       // },
-      async listInputs() {
-        const test = await API.graphql({
-          query: listInputs
-        });
-        console.log(this.test);
-        this.test = test.data.listInputs.items;
-      }
-    }
-  }
+    //   async function listInputs() {
+    //     const test = await API.graphql({
+    //       query: listInputs
+    //     });
+    //     console.log(this.test);
+    //     this.test = test.data.listInputs.items;
+    //   }
+    // }
 </script>
 
 <!-- <script setup>
