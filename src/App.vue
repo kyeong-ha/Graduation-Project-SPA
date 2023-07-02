@@ -32,20 +32,21 @@
     name: 'app',
     data() {
       return {
-        question: [],
-        answer: [],
+        id: 1,
+        question: '',
+        answer: '',
         test: []
       };
     },
     methods: {
       async createInput() {
-        const { question, answer } = this;
-        if (!question || !answer) return;
+        const { id, question, answer } = this;
+        if ( !id || !question || !answer) return;
         try{
           await API.graphql({
             query: createInput,
             variables: { 
-              input: { question: this.question, answer: this.answer }  
+              input: { id: this.id, question: this.question, answer: this.answer }  
             }
           });
           this.id++;
