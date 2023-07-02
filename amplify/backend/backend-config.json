@@ -1,28 +1,17 @@
 {
   "api": {
     "mymbti": {
-      "dependsOn": [
-        {
-          "attributes": [
-            "UserPoolId"
-          ],
-          "category": "auth",
-          "resourceName": "mymbtie2a86f12"
-        }
-      ],
+      "dependsOn": [],
       "output": {
         "authConfig": {
           "additionalAuthenticationProviders": [
             {
               "apiKeyConfig": {
-                "apiKeyExpirationDate": "2024-06-30T13:24:14.288Z",
+                "apiKeyExpirationDate": "2024-07-01T14:10:17.983Z",
                 "apiKeyExpirationDays": 365,
-                "description": ""
+                "description": "da2-abxqiyq2ijfytb4zc3awhd6rqm"
               },
               "authenticationType": "API_KEY"
-            },
-            {
-              "authenticationType": "AWS_IAM"
             },
             {
               "authenticationType": "AWS_LAMBDA",
@@ -33,10 +22,7 @@
             }
           ],
           "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-            "userPoolConfig": {
-              "userPoolId": "authmymbtie2a86f12"
-            }
+            "authenticationType": "AWS_IAM"
           }
         }
       },

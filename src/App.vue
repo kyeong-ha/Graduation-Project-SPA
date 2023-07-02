@@ -16,10 +16,13 @@
 
 <script>
 
-  import { API } from 'aws-amplify';
+  import { API, Amplify } from 'aws-amplify';
+  import amplifyConfig from "aws-exports";
   import { createInput } from './graphql/mutations'; // write the GraphQL data
   // import { listInputs } from './graphql/queries'; // read the GraphQL data
   
+    Amplify.configure(amplifyConfig);
+
     // Amplify.configure({
     //   Auth: {
     //     region: 'ap-northeast-2',
@@ -27,6 +30,7 @@
     //     userPoolWebClientId: '63iec76eaio6dfmaofqmbenc9m',
     //   },
     // });
+    
     export default {
       data : function() {
             return {
