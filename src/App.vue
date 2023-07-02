@@ -24,7 +24,7 @@
       Auth: {
         region: 'ap-northeast-2',
         userPoolId: 'ap-northeast-2_Tz1KjcvPB',
-        // userPoolWebClientId: Config.USER_POOL_WEB_CLIENT_ID,
+        userPoolWebClientId: '63iec76eaio6dfmaofqmbenc9m',
       },
     });
 
