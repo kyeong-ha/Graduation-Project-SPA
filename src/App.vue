@@ -1,5 +1,5 @@
 <template>
-  <authenticator>
+  <!-- <authenticator> -->
     <div id="app">
       <h1>TEST App</h1>
       <!-- <input type="text" v-model="id" placeholder="answer num" /> -->
@@ -11,13 +11,12 @@
       <button v-on:click="createInput">Create Answer</button>
 
     </div>
-</authenticator>
+<!-- </authenticator> -->
 </template>
 
 <script>
 
   import { API, Amplify } from 'aws-amplify';
-  import { Authenticator } from "@aws-amplify/ui-vue";
   import awsconfig from './aws-exports';
 
   import { createInput } from './graphql/mutations'; // write the GraphQL data
