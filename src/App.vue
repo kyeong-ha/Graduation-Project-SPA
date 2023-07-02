@@ -17,7 +17,7 @@
 <script>
 
   import { API, Amplify } from 'aws-amplify';
-  import amplifyConfig from "aws-exports";
+  import amplifyConfig from "./aws-exports";
   import { createInput } from './graphql/mutations'; // write the GraphQL data
   // import { listInputs } from './graphql/queries'; // read the GraphQL data
   
