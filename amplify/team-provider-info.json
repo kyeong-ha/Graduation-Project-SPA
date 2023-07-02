@@ -24,6 +24,11 @@
         "myLamda": {
           "deploymentBucketName": "amplify-mymbti-dev-230743-deployment",
           "s3Key": "amplify-builds/myLamda-42346c73553373326b2b-build.zip"
+        },
+        "mymbtie2a86f12DefineAuthChallenge": {},
+        "mymbtie2a86f12CreateAuthChallenge": {},
+        "mymbtie2a86f12VerifyAuthChallengeResponse": {
+          "RECAPTCHASECRET": ""
         }
       },
       "api": {
