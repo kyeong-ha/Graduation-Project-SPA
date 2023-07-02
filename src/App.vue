@@ -8,7 +8,7 @@
         <p>{{ item.question }}</p>
       </div>
       <input type="text" v-model="answer" placeholder="answer context" />
-      <button v-on:click="createInput()">Create Answer</button>
+      <button v-on:click="createForm()">Create Answer</button>
 
     </div>
 <!-- </authenticator> -->
@@ -31,19 +31,18 @@
     //   },
     // });
     
-    const todo = { question: "My first todo", answer: this.answer };
-    await API.graphql(graphqlOperation(createInput, {input: todo}));
 
-    // export default {
-    //   data : function() {
-    //         return {
-    //             id: 1,
-    //             question: '',
-    //             answer: ''
-    //         };
-    //     },
-    //   methods: {
-    //     async createForm() {
+    export default {
+      data : function() {
+            return {
+                id: 1,
+                question: '',
+                answer: ''
+            };
+        },
+      methods: {
+        async createForm() {
+          await API.graphql(graphqlOperation(createInput, {input: { id: this.id, question: this.question, answer: this.answer } }));
     //       try {
     //           const newInput = await API.graphql({
     //           query: createInput,
@@ -57,9 +56,9 @@
     //       } catch (error) {
     //           console.log('Error saving create', error);
     //       }
-    //     }
-    //   }
-    // }
+          }
+        }
+     }
       // async createInput() {
       //   const { id, question, answer } = this;
       //   if ( !id || !question || !answer) return;
