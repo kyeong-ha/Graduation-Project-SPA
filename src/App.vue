@@ -16,7 +16,7 @@
 
 <script>
 
-  import { API, Amplify, graphqlOperation } from 'aws-amplify';
+  import { API, Amplify } from 'aws-amplify';
   import amplifyConfig from "./aws-exports";
   import { createInput } from './graphql/mutations'; // write the GraphQL data
   // import { listInputs } from './graphql/queries'; // read the GraphQL data
@@ -42,20 +42,20 @@
         },
       methods: {
         async createForm() {
-          await API.graphql(graphqlOperation(createInput, {input: { id: this.id, question: this.question, answer: this.answer } }));
-    //       try {
-    //           const newInput = await API.graphql({
-    //           query: createInput,
-    //           variables: { input: {
-    //             "question": "Lorem ipsum dolor sit amet",
-    //             "answer": this.answer
-    //             }
-    //           }
-    //         });
-    //         console.log('Create saved successfully!', newInput);
-    //       } catch (error) {
-    //           console.log('Error saving create', error);
-    //       }
+          // await API.graphql(graphqlOperation(createInput, {input: { id: this.id, question: this.question, answer: this.answer } }));
+          try {
+              const newInput = await API.graphql({
+              query: createInput,
+              variables: { input: {
+                "question": "Lorem ipsum dolor sit amet",
+                "answer": this.answer
+                }
+              }
+            });
+            console.log('Create saved successfully!', newInput);
+          } catch (error) {
+              console.log('Error saving create', error);
+          }
           }
         }
      }

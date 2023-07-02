@@ -127,7 +127,55 @@
         }
       ]
     },
+    "AMPLIFY_function_mymbtie2a86f12CreateAuthChallenge_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "mymbtie2a86f12CreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_mymbtie2a86f12CreateAuthChallenge_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "mymbtie2a86f12CreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_mymbtie2a86f12DefineAuthChallenge_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "mymbtie2a86f12DefineAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_mymbtie2a86f12DefineAuthChallenge_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "mymbtie2a86f12DefineAuthChallenge"
+        }
+      ]
+    },
     "AMPLIFY_function_mymbtie2a86f12VerifyAuthChallengeResponse_RECAPTCHASECRET": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "mymbtie2a86f12VerifyAuthChallengeResponse"
+        }
+      ]
+    },
+    "AMPLIFY_function_mymbtie2a86f12VerifyAuthChallengeResponse_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "mymbtie2a86f12VerifyAuthChallengeResponse"
+        }
+      ]
+    },
+    "AMPLIFY_function_mymbtie2a86f12VerifyAuthChallengeResponse_s3Key": {
       "usedBy": [
         {
           "category": "function",

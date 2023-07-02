@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-mymbti-dev-230743-unauthRole",
       "StackName": "amplify-mymbti-dev-230743",
       "StackId": "arn:aws:cloudformation:ap-northeast-2:709182149749:stack/amplify-mymbti-dev-230743/7dbc85a0-1298-11ee-8e9b-0a8b03d974b0",
-      "AmplifyAppId": "dt6j3a4baf4a9"
+      "AmplifyAppId": "dt6j3a4baf4a9",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-mymbti-dev-230743-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
@@ -25,10 +26,18 @@
           "deploymentBucketName": "amplify-mymbti-dev-230743-deployment",
           "s3Key": "amplify-builds/myLamda-42346c73553373326b2b-build.zip"
         },
-        "mymbtie2a86f12DefineAuthChallenge": {},
-        "mymbtie2a86f12CreateAuthChallenge": {},
+        "mymbtie2a86f12DefineAuthChallenge": {
+          "deploymentBucketName": "amplify-mymbti-dev-230743-deployment",
+          "s3Key": "amplify-builds/mymbtie2a86f12DefineAuthChallenge-69765375713475704636-build.zip"
+        },
+        "mymbtie2a86f12CreateAuthChallenge": {
+          "deploymentBucketName": "amplify-mymbti-dev-230743-deployment",
+          "s3Key": "amplify-builds/mymbtie2a86f12CreateAuthChallenge-6a66464658385a657659-build.zip"
+        },
         "mymbtie2a86f12VerifyAuthChallengeResponse": {
-          "RECAPTCHASECRET": ""
+          "RECAPTCHASECRET": "",
+          "deploymentBucketName": "amplify-mymbti-dev-230743-deployment",
+          "s3Key": "amplify-builds/mymbtie2a86f12VerifyAuthChallengeResponse-4a6f374636516c35352b-build.zip"
         }
       },
       "api": {
