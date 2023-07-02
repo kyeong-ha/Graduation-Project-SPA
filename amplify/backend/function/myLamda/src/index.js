@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* Amplify Params - DO NOT EDIT
 	ENV
 	REGION
