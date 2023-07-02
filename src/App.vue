@@ -32,29 +32,44 @@
     name: 'app',
     data() {
       return {
-        id: 1,
         question: '',
         answer: '',
-        test: []
+        // test: []
       };
     },
+    
     methods: {
       async createInput() {
-        const { id, question, answer } = this;
-        if ( !id || !question || !answer) return;
-        try{
-          await API.graphql({
-            query: createInput,
-            variables: { 
-              input: { id: this.id, question: this.question, answer: this.answer }  
+        try {
+          const newInput = await API.graphql({
+          query: createInput,
+          variables: { input: {
+            "question": "Lorem ipsum dolor sit amet",
+            "answer": this.answer
             }
-          });
-          this.id++;
-          console.log('New contact created!');
-        } catch (err) {
-          console.log({ err });
+          }
+        });
+        console.log('Create saved successfully!', newInput);
+        } catch (error) {
+          console.log('Error saving create', error);
         }
       },
+      // async createInput() {
+      //   const { id, question, answer } = this;
+      //   if ( !id || !question || !answer) return;
+      //   try{
+      //     await API.graphql({
+      //       query: createInput,
+      //       variables: { 
+      //         input: { id: this.id, question: this.question, answer: this.answer }  
+      //       }
+      //     });
+      //     this.id++;
+      //     console.log('New contact created!');
+      //   } catch (err) {
+      //     console.log({ err });
+      //   }
+      // },
       async listInputs() {
         const test = await API.graphql({
           query: listInputs
