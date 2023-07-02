@@ -8,7 +8,7 @@
         <p>{{ item.question }}</p>
       </div>
       <input type="text" v-model="answer" placeholder="answer context" />
-      <button v-on:click="createForm()">Create Answer</button>
+      <button v-on:click="createInput()">Create Answer</button>
 
     </div>
 <!-- </authenticator> -->
@@ -16,7 +16,7 @@
 
 <script>
 
-  import { API, Amplify } from 'aws-amplify';
+  import { API, Amplify, graphqlOperation } from 'aws-amplify';
   import amplifyConfig from "./aws-exports";
   import { createInput } from './graphql/mutations'; // write the GraphQL data
   // import { listInputs } from './graphql/queries'; // read the GraphQL data
@@ -31,32 +31,35 @@
     //   },
     // });
     
-    export default {
-      data : function() {
-            return {
-                id: 1,
-                question: '',
-                answer: ''
-            };
-        },
-      methods: {
-        async createForm() {
-          try {
-              const newInput = await API.graphql({
-              query: createInput,
-              variables: { input: {
-                "question": "Lorem ipsum dolor sit amet",
-                "answer": this.answer
-                }
-              }
-            });
-            console.log('Create saved successfully!', newInput);
-          } catch (error) {
-              console.log('Error saving create', error);
-          }
-        }
-      }
-    }
+    const todo = { question: "My first todo", answer: this.answer };
+    await API.graphql(graphqlOperation(createInput, {input: todo}));
+
+    // export default {
+    //   data : function() {
+    //         return {
+    //             id: 1,
+    //             question: '',
+    //             answer: ''
+    //         };
+    //     },
+    //   methods: {
+    //     async createForm() {
+    //       try {
+    //           const newInput = await API.graphql({
+    //           query: createInput,
+    //           variables: { input: {
+    //             "question": "Lorem ipsum dolor sit amet",
+    //             "answer": this.answer
+    //             }
+    //           }
+    //         });
+    //         console.log('Create saved successfully!', newInput);
+    //       } catch (error) {
+    //           console.log('Error saving create', error);
+    //       }
+    //     }
+    //   }
+    // }
       // async createInput() {
       //   const { id, question, answer } = this;
       //   if ( !id || !question || !answer) return;
